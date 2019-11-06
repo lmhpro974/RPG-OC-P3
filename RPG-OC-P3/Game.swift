@@ -16,18 +16,17 @@ class Game {
         self.player1 = player1
         self.player2 = player2
         startGame() // initialiser le début de la partie
-            print("Game - init")
-        }
-        func startGame() {
-            print("Game - startGame")
-            //print("construire équipe 1")
-            print("team 1")
-            player1.playerBuilding()
-            //print("construire équipe 2")
-            print("team 2")
-            // player2.playerBuilding()
-           
-        }
+        print("Game - init")
+    }
     
-    
+    func startGame() {
+        print("Game - startGame")
+        //print("construire équipe 1")
+        print("team 1")
+        player1.playerBuilding()
+        //print("construire équipe 2")
+        print("team 2")
+        // player2.playerBuilding()
+        
+    }
 }
