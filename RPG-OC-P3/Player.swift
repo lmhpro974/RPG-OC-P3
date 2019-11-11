@@ -13,7 +13,8 @@ class  Player {
     // le tableau est une variable statique, il est commun à 2 équipes (joueurs)
     static  var allCharNames = [ String ]()
     
-    func  playerBuilding () { // construire 2 équipes de 3 personnages
+    func  playerBuilding () {
+        // construire 2équipes de 3 personnages
         // tant que je n'ai pas 3 joueurs, je crée un joueur
         print (" Player - playerBuilding ")
         playerName = "the good, the bad and the ugly"
