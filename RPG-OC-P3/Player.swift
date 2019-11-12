@@ -7,21 +7,13 @@
 //
 import Foundation
 
-class  Player {
-    var playerName: String = ""
-    var playerMembers = [Character]()
+class Player {
+    let name: String
+    let team = [Character]()
     // le tableau est une variable statique, il est commun à 2 équipes (joueurs)
-    static  var allCharNames = [ String ]()
+    static var allCharNames = [String]()
     
-    func  playerBuilding () {
-        // construire 2équipes de 3 personnages
-        // tant que je n'ai pas 3 joueurs, je crée un joueur
-        print (" Player - playerBuilding ")
-        playerName = "the good, the bad and the ugly"
-        playerMembers = [
-            Character(name: "Blondin" , lifePoints: 200, weapon: Axe()),
-            Character(name: "Sentenza" , lifePoints: 150, weapon: Knife()),
-            Character(name: "Tuco" , lifePoints: 100, weapon: Bazouka())
-        ]
+    init(name: String) {
+        self.name = name
     }
 }

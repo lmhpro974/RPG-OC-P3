@@ -8,6 +8,10 @@
 import Foundation
 
 print("JEU DE ROLE P3")
-print()
-let currentGame = Game(player1: Player(), player2: Player())
+let namePlayer1 = "joueur1"
+let namePlayer2 = "joueur2"
+let player1 = Player(name: namePlayer1)
+let player2 = Player(name: namePlayer2)
+
+let currentGame = Game.init(player1: player1, player2: player2)
 // jouer

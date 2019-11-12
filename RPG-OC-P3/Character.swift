@@ -1,5 +1,5 @@
 //
-//  Characters.swift
+//  Character.swift
 //  RPG-OC-P3
 //
 //  Created by Macbook on 03/11/2019.

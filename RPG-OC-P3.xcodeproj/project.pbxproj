@@ -10,7 +10,7 @@
 		FAA644AD236F42F9006D31A3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA644AC236F42F9006D31A3 /* main.swift */; };
 		FAA644B4236F4460006D31A3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA644B3236F4460006D31A3 /* Game.swift */; };
 		FAA644B6236F4472006D31A3 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA644B5236F4472006D31A3 /* Player.swift */; };
-		FAA644B8236F448B006D31A3 /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA644B7236F448B006D31A3 /* Characters.swift */; };
+		FAA644B8236F448B006D31A3 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA644B7236F448B006D31A3 /* Character.swift */; };
 		FAA644BB236F44C4006D31A3 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA644BA236F44C4006D31A3 /* Weapon.swift */; };
 		FAA644BD236F44D6006D31A3 /* Axe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA644BC236F44D6006D31A3 /* Axe.swift */; };
 		FAA644BF236F44E9006D31A3 /* Knife.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA644BE236F44E9006D31A3 /* Knife.swift */; };
@@ -34,7 +34,7 @@
 		FAA644AC236F42F9006D31A3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		FAA644B3236F4460006D31A3 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		FAA644B5236F4472006D31A3 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		FAA644B7236F448B006D31A3 /* Characters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Characters.swift; sourceTree = "<group>"; };
+		FAA644B7236F448B006D31A3 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		FAA644BA236F44C4006D31A3 /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 		FAA644BC236F44D6006D31A3 /* Axe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Axe.swift; sourceTree = "<group>"; };
 		FAA644BE236F44E9006D31A3 /* Knife.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knife.swift; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 				FAA644AC236F42F9006D31A3 /* main.swift */,
 				FAA644B3236F4460006D31A3 /* Game.swift */,
 				FAA644B5236F4472006D31A3 /* Player.swift */,
-				FAA644B7236F448B006D31A3 /* Characters.swift */,
+				FAA644B7236F448B006D31A3 /* Character.swift */,
 			);
 			path = "RPG-OC-P3";
 			sourceTree = "<group>";
@@ -156,7 +156,7 @@
 				FAA644B4236F4460006D31A3 /* Game.swift in Sources */,
 				FAA644C1236F4503006D31A3 /* Bazouka.swift in Sources */,
 				FAA644BF236F44E9006D31A3 /* Knife.swift in Sources */,
-				FAA644B8236F448B006D31A3 /* Characters.swift in Sources */,
+				FAA644B8236F448B006D31A3 /* Character.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
