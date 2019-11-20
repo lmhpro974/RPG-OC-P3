@@ -18,6 +18,7 @@ class Game {
         print("Game - init")
     }
     func startGame() {
+        player1.makeTeam()
         
         
     }

@@ -9,11 +9,22 @@ import Foundation
 
 class Player {
     let name: String
-    let team = [Character]()
+    var team = [Character]()
     // le tableau est une variable statique, il est commun à 2 équipes (joueurs)
     static var allCharNames = [String]()
     
     init(name: String) {
         self.name = name
+    }
+    func makeTeam() {
+        
+        while team.count < 3 {
+            print("Quel est le nom de votre personnage ?")
+            if let name = readLine(), name != "" {
+                let character = Character(name: name)
+                team.append(character)
+            }
+        }
+        
     }
 }
