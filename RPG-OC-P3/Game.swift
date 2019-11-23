@@ -20,6 +20,21 @@ class Game {
     func startGame() {
         player1.makeTeam()
         
-        
+    }
+    func battle() {  // la bataille se termine quand tous les personnages d'une équipes sont morts
+        // print("Bataille")
+        print()
+        var teamDead = true
+        repeat {
+            
+            var i = 0
+            i += 1
+            print("Bataille  \(i)")
+            if i > 3 { teamDead = !teamDead }
+            
+        }
+        while (!teamDead)
+        //
+        //   finalPresentation() //
     }
 }

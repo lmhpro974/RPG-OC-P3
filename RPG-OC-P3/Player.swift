@@ -25,6 +25,9 @@ class Player {
                 team.append(character)
             }
         }
-        
+        for c in team {
+            print("   \(c.name)")
+            
+        }
     }
 }
