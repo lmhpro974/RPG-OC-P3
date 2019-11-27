@@ -16,18 +16,29 @@ class Player {
     init(name: String) {
         self.name = name
     }
+    
     func makeTeam() {
-        
         while team.count < 3 {
             print("Quel est le nom de votre personnage ?")
-            if let name = readLine(), name != "" {
+            if let name = readLine(), name != "", checkIfNameIsAbsent(name: name) {
                 let character = Character(name: name)
                 team.append(character)
+                print("Le personnage \(name) est bien ajouté")
+            } else {
+                print("Le nom du personnage que vous venez d'entrez est incorrect")
             }
         }
         for c in team {
             print("   \(c.name)")
-            
         }
+    }
+    func checkIfNameIsAbsent(name: String) -> Bool {
+        for character in team {
+            if character.name == name {
+                return false
+                
+            }
+        }
+        return true
     }
 }
