@@ -24,7 +24,7 @@ class Game {
     }
     func battle() {  // la bataille se termine quand tous les personnages d'une équipes sont morts
         // print("Bataille")
-        print()
+        print("Bataille")
         var teamDead = true
         repeat {
             

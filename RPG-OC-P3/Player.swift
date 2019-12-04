@@ -19,19 +19,17 @@ class Player {
     
     func makeTeam() {
         while team.count < 3 {
-            print("Quel est le nom de votre personnage\(team.count + 1) de \(name) ?")
-            if let name = readLine(), name != "", checkIfNameIsAbsent(name: name) {
-                let character = Character(name: name)
+            print("Quel est le nom de votre personnage \(team.count + 1) de \(name) ?")
+            if let characterName = readLine(), characterName != "", checkIfNameIsAbsent(name: characterName) {
+                let character = Character(name: characterName)
                 team.append(character)
-                print("Le personnage \(name) est bien ajouté")
+                print("Le personnage \(characterName) est bien ajouté")
             } else {
-                print("Le nom du personnage existe déja dans une des 2 équipes")
+                print("Le nom du personnage existe déjà dans une des 2 équipes")
             }
         }
-        for c in team {
-            print("Equipe de \(c.name)")
-        }
     }
+    
     func checkIfNameIsAbsent(name: String) -> Bool {
         if Player.allCharNames.contains(name) {
             return false
