@@ -19,6 +19,7 @@ class Game {
     }
     func startGame() {
         player1.makeTeam()
+        player2.makeTeam()
         
     }
     func battle() {  // la bataille se termine quand tous les personnages d'une équipes sont morts
