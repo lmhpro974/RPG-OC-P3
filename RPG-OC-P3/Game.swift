@@ -20,22 +20,50 @@ class Game {
     func startGame() {
         player1.makeTeam()
         player2.makeTeam()
-        
+        presentationBeforeBattle()
+        presentationBeforeBattle2()
+        presentationLifePoints()
+        presentationLifePoints2()
+        battle()
     }
-    func battle() {  // la bataille se termine quand tous les personnages d'une équipes sont morts
-        // print("Bataille")
-        print("Bataille")
-        var teamDead = true
-        repeat {
-            
-            var i = 0
-            i += 1
-            print("Bataille  \(i)")
-            if i > 3 { teamDead = !teamDead }
-            
+    func presentationBeforeBattle() {
+        print("\n\(player1.name) dispose des personnages suivants : ")
+        for character in player1.team {
+            print("Personnage \(character.name)")
         }
-        while (!teamDead)
-        //
-        //   finalPresentation() //
     }
+    func presentationBeforeBattle2() {
+        print("\n\(player2.name) dispose des personnages suivants : ")
+        for character in player2.team {
+            print("Personnage \(character.name)")
+        }
+    }
+    func presentationLifePoints() {
+        print("\n\(player1.name) dispose de 200 points : ")
+        for character in player1.team {
+            print("Personnage \(character.name)")
+        }
+    }
+    func presentationLifePoints2() {
+        print("\n\(player2.name) dispose de 200 points : ")
+        for character in player2.team {
+            print("Personnage \(character.name)")
+        }
+    }
+        func battle() {  // la bataille se termine quand tous les personnages d'une équipes sont morts
+            // print("Bataille")
+            print("Bataille")
+            var teamDead = true
+            repeat {
+                
+                var i = 0
+                i += 1
+                print("Bataille  \(i)")
+                if i > 3 { teamDead = !teamDead }
+                
+            }
+                while (!teamDead)
+            //
+            //   finalPresentation() //
+        }
 }
