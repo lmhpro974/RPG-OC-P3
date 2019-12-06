@@ -10,6 +10,6 @@ import Foundation
 
 class Bazouka: Weapon {
     init() {
-        super.init(name: "Bazouka", damage: 150)
+        super.init(name: "Bazouka💣", damage: 150)
     }
 }

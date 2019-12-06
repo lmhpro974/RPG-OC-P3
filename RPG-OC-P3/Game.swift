@@ -23,18 +23,18 @@ class Game {
         presentationBeforeBattle()
         battle()
     }
-    func presentationBeforeBattle() {
-        print("\n\(player1.name) dispose des personnages suivants : ")
-        for character in player1.team {
-            print("Personnage \(character.name) avec \(character.lifePoints) points de vie")
-            print(" dont l'arme est : \(character.weapon.name) avec \(character.weapon.damage) dégats ")
-        }
-        print("\n\(player2.name) dispose des personnages suivants : ")
-        for character in player2.team {
-            print("Personnage \(character.name) avec \(character.lifePoints) points de vie")
-            print(" dont l'arme est : \(character.weapon.name) avec \(character.weapon.damage) dégats ")
-        }
-    }
+   func presentationBeforeBattle() {
+       print("\n\(player1.name) dispose des personnages suivants : ")
+       for character in player1.team {
+           print("Personnage \(character.name) avec \(character.lifePoints) points de vie")
+           print(" dont l'arme est : \(character.weapon.name) avec \(character.weapon.damage) dégats ")
+       }
+       print("\n\(player2.name) dispose des personnages suivants : ")
+       for character in player2.team {
+           print("Personnage \(character.name) avec \(character.lifePoints) points de vie")
+           print(" dont l'arme est : \(character.weapon.name) avec \(character.weapon.damage) dégats ")
+       }
+   }
 }
 func battle() {  // la bataille se termine quand tous les personnages d'une équipes sont morts
     // print("Bataille")
