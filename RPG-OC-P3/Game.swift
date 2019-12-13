@@ -15,7 +15,7 @@ class Game {
         self.player1 = player1
         self.player2 = player2
         startGame() // initialiser le début de la partie
-        print("Game - init")
+       
     }
     func startGame() {
         player1.makeTeam()
@@ -23,33 +23,26 @@ class Game {
         presentationBeforeBattle()
         battle()
     }
-   func presentationBeforeBattle() {
-       print("\n\(player1.name) dispose des personnages suivants : ")
-       for character in player1.team {
-           print("Personnage \(character.name) avec \(character.lifePoints) points de vie")
-           print(" dont l'arme est : \(character.weapon.name) avec \(character.weapon.damage) dégats ")
-       }
-       print("\n\(player2.name) dispose des personnages suivants : ")
-       for character in player2.team {
-           print("Personnage \(character.name) avec \(character.lifePoints) points de vie")
-           print(" dont l'arme est : \(character.weapon.name) avec \(character.weapon.damage) dégats ")
-       }
-   }
-}
-func battle() {  // la bataille se termine quand tous les personnages d'une équipes sont morts
-    // print("Bataille")
-    print("Bataille")
-    var teamDead = true
-    repeat {
-        
-        var i = 0
-        i += 1
-        print("Bataille  \(i)")
-        if i > 3 { teamDead = !teamDead }
-        
+    func presentationBeforeBattle() {
+        print("\n\(player1.name) dispose des personnages suivants : ")
+        for character in player1.team {
+            print("Personnage \(character.name) avec \(character.lifePoints) points de vie")
+            print(" dont l'arme est : \(character.weapon.name) avec \(character.weapon.damage) dégats ")
+        }
+        print("\n\(player2.name) dispose des personnages suivants : ")
+        for character in player2.team {
+            print("Personnage \(character.name) avec \(character.lifePoints) points de vie")
+            print(" dont l'arme est : \(character.weapon.name) avec \(character.weapon.damage) dégats ")
+        }
     }
-        while (!teamDead)
-    //
-    //   finalPresentation() //
+    func battle() {
+        print("Entrez le numero du personage qui doit attaquer l'adversaire:")
+        if let characterNumber = readLine(), let characterNumberInt = Int(characterNumber), characterNumberInt >= 1 || characterNumberInt <= 3 {
+      //      player1.team
+        } else {
+            print("Le numéro et incorect")
+        }
+    }
 }
+
 
