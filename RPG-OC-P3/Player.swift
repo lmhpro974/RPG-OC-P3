@@ -10,6 +10,7 @@ import Foundation
 class Player {
     let name: String
     var team = [Character]()
+    var teamLifePoints = 300
     // le tableau est une variable statique, il est commun à 2 équipes (joueurs)
     static var allCharNames = [String]()
     
@@ -18,12 +19,13 @@ class Player {
     }
     
     func makeTeam() {
+        print()
         while team.count < 3 {
             print("Quel est le nom de votre personnage \(team.count + 1) de \(name) ?")
-            if let characterName = readLine(), characterName != "", checkIfNameIsAbsent(name: characterName) {
+            if let characterName = readLine(), characterName != "", characterName != " ", checkIfNameIsAbsent(name: characterName) {
                 let character = Character(name: characterName)
                 team.append(character)
-                print("Le personnage \(characterName) est bien ajouté")
+                //print("Le personnage \(characterName) est bien ajouté")
             } else {
                 print("Le nom du personnage existe déjà dans une des 2 équipes")
             }
@@ -38,4 +40,23 @@ class Player {
         }
         return true
     }
+    // presentation of living or dead characters
+    func listCharactersOfPlayer(player: Player) {
+        var c : Int = 0
+        var nbAlive: Int = 0
+        var status : String = "ALIVE"
+        
+        for character in player.team {
+            if character.lifePoints > 0 {
+                status = "ALIVE"
+                nbAlive += 1
+            } else {
+                status = "DEAD"
+            }
+            print("\(c+1)   Nom : \(character.name) Arme : \(character.weapon.name) Pts de vie : \(character.lifePoints) - \(status)")
+            c += 1
+            
+        }
+    }
+    
 }

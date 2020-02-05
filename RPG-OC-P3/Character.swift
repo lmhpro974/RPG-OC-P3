@@ -10,8 +10,8 @@ import Foundation
 
 class Character {
     let name: String
-    let lifePoints = 200
-    let weapon = [Axe(), Bazouka(), Knife()].randomElement()!
+    var lifePoints = 100
+    var weapon = [Axe(), Bazouka(), Knife(),Sword(),dynamite()].randomElement()!
     
     init(name: String) {
         self.name = name

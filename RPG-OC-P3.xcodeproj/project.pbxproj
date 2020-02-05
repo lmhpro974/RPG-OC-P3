@@ -15,6 +15,8 @@
 		FAA644BD236F44D6006D31A3 /* Axe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA644BC236F44D6006D31A3 /* Axe.swift */; };
 		FAA644BF236F44E9006D31A3 /* Knife.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA644BE236F44E9006D31A3 /* Knife.swift */; };
 		FAA644C1236F4503006D31A3 /* Bazouka.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA644C0236F4503006D31A3 /* Bazouka.swift */; };
+		FAED7E3F23AE5D3C00816042 /* Sword.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAED7E3E23AE5D3C00816042 /* Sword.swift */; };
+		FAED7E4123AE5E2100816042 /* dynamite.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAED7E4023AE5E2100816042 /* dynamite.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +41,8 @@
 		FAA644BC236F44D6006D31A3 /* Axe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Axe.swift; sourceTree = "<group>"; };
 		FAA644BE236F44E9006D31A3 /* Knife.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knife.swift; sourceTree = "<group>"; };
 		FAA644C0236F4503006D31A3 /* Bazouka.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bazouka.swift; sourceTree = "<group>"; };
+		FAED7E3E23AE5D3C00816042 /* Sword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sword.swift; sourceTree = "<group>"; };
+		FAED7E4023AE5E2100816042 /* dynamite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dynamite.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 			isa = PBXGroup;
 			children = (
 				FAA644BA236F44C4006D31A3 /* Weapon.swift */,
+				FAED7E4023AE5E2100816042 /* dynamite.swift */,
+				FAED7E3E23AE5D3C00816042 /* Sword.swift */,
 				FAA644BC236F44D6006D31A3 /* Axe.swift */,
 				FAA644BE236F44E9006D31A3 /* Knife.swift */,
 				FAA644C0236F4503006D31A3 /* Bazouka.swift */,
@@ -118,7 +124,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1120;
-				LastUpgradeCheck = 1120;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = LMH974;
 				TargetAttributes = {
 					FAA644A8236F42F9006D31A3 = {
@@ -157,6 +163,8 @@
 				FAA644C1236F4503006D31A3 /* Bazouka.swift in Sources */,
 				FAA644BF236F44E9006D31A3 /* Knife.swift in Sources */,
 				FAA644B8236F448B006D31A3 /* Character.swift in Sources */,
+				FAED7E4123AE5E2100816042 /* dynamite.swift in Sources */,
+				FAED7E3F23AE5D3C00816042 /* Sword.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +287,7 @@
 		FAA644B1236F42F9006D31A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M8GHN5LT3K;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -290,6 +299,7 @@
 		FAA644B2236F42F9006D31A3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M8GHN5LT3K;
 				ENABLE_HARDENED_RUNTIME = YES;
