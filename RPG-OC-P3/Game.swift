@@ -53,10 +53,9 @@ class Game {
         var totalAttacker = 0
         var characterIsDead = false
         var attacker = player2  // je peux forcer l'optionelle parce que reply = 1 2 ou 3
-        var defender = player1// je peux forcer l'optionelle parce que reply = 1 2 ou 3
+        var defender = player1 // je peux forcer l'optionelle parce que reply = 1 2 ou 3
         repeat {
             swap(&attacker, &defender)
-            // 1 choix d'un personnage du joueur qui va commencer ( attaque ou soigne)
             print("\n\(attacker.name)  attaque ")
             print("\nEntrez le numero du personnage (1 2 ou 3) qui doit commencer l'action:")
             
@@ -75,23 +74,15 @@ class Game {
                 }
             }
                 while characterIsDead
-            // 2 coffre random (O/N)
-            //        si coffre alors changer l'arme du joueur qui commence sinon rien
-            // 3 choix de l'action : attaque ou soin
             print("\nEntrez l'action voulue : 1 Attaquer  2 Soigner ")
             repeat { reply = readLine() ?? "1"  } while (reply != "1" && reply != "2")
             if reply == "1" {
-                //print("attaque")
-                // faire une fonction attackCharacterPlayer(player2)
                 print("\n\(defender.name)  en défense ")
                 print("\nEntrez le numero du personnage (1 2 ou 3) qui reçoit l'attaque:")
-                //let defender = player2// je peux forcer l'optionelle parce que reply = 1 2 ou 3
                 defender.listCharactersOfPlayer(player: defender)
                 repeat { reply = readLine() ?? "1"} while (reply != "1" && reply != "2" && reply != "3")
-                
                 teamAttack(attacker: attacker, indexAttacker: indexAttacker, indexDefender: Int(reply)!-1 , defender: defender)
                 // Si le total des points de vie du joueur attaqué est < 0 alors la partie est finie
-                //var c = 0
                 totalDefender = totalizePoints(player: defender)
                 totalAttacker = totalizePoints(player: attacker)
                 if totalDefender <= 0 {
@@ -100,24 +91,23 @@ class Game {
                 print("\nles personnages du joueur :  \(attacker.name) totalisent \(totalAttacker) points")
                 print("les personnages du joueur :  \(defender.name) totalisent \(totalDefender) points")
             } else {
-                print("l'action de soin est en cours de développement")
+                print()
             }
-            
-            // swap(&attacker, &defender)
         }
             while totalDefender > 0
     }
     func canChangeWeapon() -> Bool {
-        
-        return arc4random_uniform(1) == 0
-        
+        return arc4random_uniform(2) == 0
     }
+    //  coffre random (O/N)
     func chestbox(character: Character) -> Character {
         print()
-        print(" 🎲🎲🎲🎲🎲⛑🥺😃 Tirage aléatoire dans la magicBox 😃🥺⛑ 🎲🎲🎲🎲🎲" )
+        print("🎲🎲🎲🎲🎲⛑🥺😃 Tirage aléatoire dans la magicBox 😃🥺⛑ 🎲🎲🎲🎲🎲")
         let weapon = [Axe(), Bazouka(), Knife(), Sword(), dynamite()].randomElement()!
         character.weapon = weapon
-        print(" Personnage \(character.name) avec \(character.lifePoints) points de vie dont l'arme est : \(character.weapon.name) avec \(character.weapon.damage) dégats ")
+        print("Personnage \(character.name) avec \(character.lifePoints) points de vie dont l'arme est : \(character.weapon.name) avec \(character.weapon.damage) dégats")
+        print()
+        print("Le personnages a une puissance de feu plus ou moins efficace 😰😰🎲 ?,avec la nouvelles arme de \(character.name)")
         return character
     } // end chestbox
     func teamAttack(attacker: Player, indexAttacker: Int ,indexDefender: Int ,defender: Player) {
@@ -133,22 +123,15 @@ class Game {
         if defender.team[indexDefender].lifePoints <= 0 {
             print("le personnage \(defender.team[indexDefender].name) sort du jeu ")
         }
-        // }
-        // while (attacker.teamLifePoints > 0 || defender.teamLifePoints > 0)
-        
         if defender.teamLifePoints < 0 {
             isTeamDead = true
-            
             print(" JEU TERMINE") }
-        //swap(&attacker, &defender)
     }
-    
     func totalizePoints(player: Player)-> Int {
         var totpts = 0
         for characters in player.team {
             totpts = totpts + characters.lifePoints
         }
-        // print("\(player.name) \(totpts)")
         return totpts
     }
 }
