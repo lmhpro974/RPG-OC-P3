@@ -25,7 +25,6 @@ class Player {
             if let characterName = readLine(), characterName != "", characterName != " ", checkIfNameIsAbsent(name: characterName) {
                 let character = Character(name: characterName)
                 team.append(character)
-                //print("Le personnage \(characterName) est bien ajouté")
             } else {
                 print("Le nom du personnage existe déjà dans une des 2 équipes")
             }
@@ -40,7 +39,7 @@ class Player {
         }
         return true
     }
-    // presentation of living or dead characters
+    
     func listCharactersOfPlayer(player: Player) {
         var c : Int = 0
         var nbAlive: Int = 0
@@ -53,10 +52,8 @@ class Player {
             } else {
                 status = "DEAD"
             }
-            print("\(c+1)   Nom : \(character.name) Arme : \(character.weapon.name) Pts de vie : \(character.lifePoints) - \(status)")
+            print("\(c+1) Nom : \(character.name) Arme : \(character.weapon.name) Pts de vie : \(character.lifePoints) - \(status)")
             c += 1
-            
         }
     }
-    
 }

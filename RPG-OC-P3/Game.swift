@@ -28,19 +28,20 @@ class Game {
         battle()
         presentationAfterBattle()
     }
+    
     func presentationBeforeBattle() {
         var c = 0
-        print("\n\(player1.name) dispose des personnages suivants : ")
+        print("\n\(player1.name) dispose des personnages suivants :")
         
         for character in player1.team {
             c += 1
-            print("\(c) Personnage \(character.name) avec \(character.lifePoints) points de vie dont l'arme est : \(character.weapon.name) avec \(character.weapon.damage) dégats ")
+            print("\(c) Personnage \(character.name) avec \(character.lifePoints) points de vie dont l'arme est : \(character.weapon.name) avec \(character.weapon.damage) dégats")
         }
-        print("\n\(player2.name) dispose des personnages suivants : ")
+        print("\n\(player2.name) dispose des personnages suivants :")
         c = 0
         for character in player2.team {
             c += 1
-            print("\(c) Personnage \(character.name) avec \(character.lifePoints) points de vie dont l'arme est : \(character.weapon.name) avec \(character.weapon.damage) dégats ")
+            print("\(c) Personnage \(character.name) avec \(character.lifePoints) points de vie dont l'arme est : \(character.weapon.name) avec \(character.weapon.damage) dégats")
         }
     }
     
@@ -56,8 +57,8 @@ class Game {
         var defender = player1 // je peux forcer l'optionelle parce que reply = 1 2 ou 3
         repeat {
             swap(&attacker, &defender)
-            print("\n\(attacker.name)  attaque ")
-            print("\nEntrez le numero du personnage (1 2 ou 3) qui doit commencer l'action:")
+            print("\n\(attacker.name) attaque")
+            print("\nEntrez le numero du personnage (1, 2 ou 3) qui doit commencer l'action :")
             
             attacker.listCharactersOfPlayer(player: attacker)
             var indexAttacker = 0
@@ -75,10 +76,10 @@ class Game {
             }
                 while characterIsDead
             print("\nEntrez l'action voulue : 1 Attaquer  2 Soigner ")
-            repeat { reply = readLine() ?? "1"  } while (reply != "1" && reply != "2")
+            repeat { reply = readLine() ?? "1" } while (reply != "1" && reply != "2")
             if reply == "1" {
-                print("\n\(defender.name)  en défense ")
-                print("\nEntrez le numero du personnage (1 2 ou 3) qui reçoit l'attaque:")
+                print("\n\(defender.name) en défense")
+                print("\nEntrez le numero du personnage (1, 2 ou 3) qui reçoit l'attaque :")
                 defender.listCharactersOfPlayer(player: defender)
                 repeat { reply = readLine() ?? "1"} while (reply != "1" && reply != "2" && reply != "3")
                 teamAttack(attacker: attacker, indexAttacker: indexAttacker, indexDefender: Int(reply)!-1 , defender: defender)
@@ -88,8 +89,8 @@ class Game {
                 if totalDefender <= 0 {
                     isTeamDead = true
                 }
-                print("\nles personnages du joueur :  \(attacker.name) totalisent \(totalAttacker) points")
-                print("les personnages du joueur :  \(defender.name) totalisent \(totalDefender) points")
+                print("\nles personnages du joueur : \(attacker.name) totalisent \(totalAttacker) points")
+                print("les personnages du joueur : \(defender.name) totalisent \(totalDefender) points")
             } else {
                 print()
             }
@@ -99,7 +100,7 @@ class Game {
     func canChangeWeapon() -> Bool {
         return arc4random_uniform(2) == 0
     }
-    //  coffre random (O/N)
+    
     func chestbox(character: Character) -> Character {
         print()
         print("🎲🎲🎲🎲🎲⛑🥺😃 Tirage aléatoire dans la magicBox 😃🥺⛑ 🎲🎲🎲🎲🎲")
@@ -107,10 +108,11 @@ class Game {
         character.weapon = weapon
         print("Personnage \(character.name) avec \(character.lifePoints) points de vie dont l'arme est : \(character.weapon.name) avec \(character.weapon.damage) dégats")
         print()
-        print("Le personnages a une puissance de feu plus ou moins efficace 😰😰🎲 ?,avec la nouvelles arme de \(character.name)")
+        print("Le personnage a une puissance de feu plus ou moins efficace avec la nouvelles arme de \(character.name)")
         return character
-    } // end chestbox
-    func teamAttack(attacker: Player, indexAttacker: Int ,indexDefender: Int ,defender: Player) {
+    }
+    
+    func teamAttack(attacker: Player, indexAttacker: Int, indexDefender: Int, defender: Player) {
         let attacker = attacker
         let defender = defender
         defender.team[indexDefender].lifePoints -= attacker.team[indexAttacker].weapon.damage
@@ -125,9 +127,11 @@ class Game {
         }
         if defender.teamLifePoints < 0 {
             isTeamDead = true
-            print(" JEU TERMINE") }
+            print(" JEU TERMINE")
+        }
     }
-    func totalizePoints(player: Player)-> Int {
+    
+    func totalizePoints(player: Player) -> Int {
         var totpts = 0
         for characters in player.team {
             totpts = totpts + characters.lifePoints
