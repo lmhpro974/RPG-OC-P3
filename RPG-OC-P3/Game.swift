@@ -12,24 +12,29 @@ class Game {
     let player1: Player
     let player2: Player
     var isTeamDead = false
+    var rounds = 0
+    
     
     init(player1: Player, player2: Player) {
+        print("⚜️⚔️⚜️⚔️⚜️⚔️⚜️  JEU DE ROLE P3 ⚜️⚔️⚜️⚔️⚜️⚔️⚜️")
         self.player1 = player1
         self.player2 = player2
-        startGame() // initialiser le début de la partie
+        startGame()
         
     }
+    /*initialiser le début de la partie,
+      initialize the beginning of the game*/
     func startGame() {
         print("\nSaisie des personnages Joueur 1♤🕵🏽‍♂️")
         player1.makeTeam()
         print("\nSaisie des personnages Joueur 2♡👮🏼‍♀️")
         player2.makeTeam()
-        presentationBeforeBattle()
+        presentationPlayers()
         battle()
         presentationAfterBattle()
     }
     
-    func presentationBeforeBattle() {
+    func presentationPlayers() {
         var c = 0
         print("\n\(player1.name) dispose des personnages suivants :")
         
@@ -47,8 +52,13 @@ class Game {
     
     func presentationAfterBattle() {
         print("Partie terminée")
+        print("Nombre de tours : \(rounds)")
+        print("Points de vie restant à chaque personnage :")
+        presentationPlayers()
     }
-    
+    /*choice of a character of the player who is going to start (attack or heal)
+     choix d'un personnage du joueur qui va commencer ( attaque ou soigne)
+     */
     func battle() {
         var totalDefender = 0
         var totalAttacker = 0
@@ -83,7 +93,9 @@ class Game {
                 defender.listCharactersOfPlayer(player: defender)
                 repeat { reply = readLine() ?? "1"} while (reply != "1" && reply != "2" && reply != "3")
                 teamAttack(attacker: attacker, indexAttacker: indexAttacker, indexDefender: Int(reply)!-1 , defender: defender)
-                // Si le total des points de vie du joueur attaqué est < 0 alors la partie est finie
+                rounds = rounds + 1
+                /*If the total of health points of the attacked player is < 0 then the game is over.
+                 Si le total des points de vie du joueur attaqué est < 0 alors la partie est finie*/
                 totalDefender = totalizePoints(player: defender)
                 totalAttacker = totalizePoints(player: attacker)
                 if totalDefender <= 0 {
@@ -97,10 +109,12 @@ class Game {
         }
             while totalDefender > 0
     }
+    /* The chest will necessarily contain a weapon (more or less powerful than the existing one).
+     Le coffre contiendra forcément une arme (plus ou moins puissante que celle existante).
+     */
     func canChangeWeapon() -> Bool {
         return arc4random_uniform(2) == 0
     }
-    
     func chestbox(character: Character) -> Character {
         print()
         print("🎲🎲🎲🎲🎲⛑🥺😃 Tirage aléatoire dans la magicBox 😃🥺⛑ 🎲🎲🎲🎲🎲")
@@ -125,12 +139,10 @@ class Game {
         if defender.team[indexDefender].lifePoints <= 0 {
             print("le personnage \(defender.team[indexDefender].name) sort du jeu ")
         }
-        if defender.teamLifePoints < 0 {
-            isTeamDead = true
-            print(" JEU TERMINE")
-        }
     }
-    
+    /*If the total of health points of the attacked player is < 0 then the game is over.
+     Si le total des points de vie du joueur attaqué est < 0 alors la partie est finie
+     */
     func totalizePoints(player: Player) -> Int {
         var totpts = 0
         for characters in player.team {

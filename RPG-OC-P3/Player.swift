@@ -6,12 +6,15 @@
 //   Copyright © 2019 LMH974. Tous les droits sont réservés.
 //
 import Foundation
-
-class Player {
+/*Class "Player" which defines the name of the character and the number of points.
+ Class "Joueur " qui défini le nom du personnage son nombre de points */
+ class Player {
     let name: String
     var team = [Character]()
     var teamLifePoints = 300
-    // le tableau est une variable statique, il est commun à 2 équipes (joueurs)
+/*the board is a static variable, it is common to 2 teams (players)
+ le tableau est une variable statique, il est commun à 2 équipes (joueurs)
+ */
     static var allCharNames = [String]()
     
     init(name: String) {
@@ -41,9 +44,9 @@ class Player {
     }
     
     func listCharactersOfPlayer(player: Player) {
-        var c : Int = 0
+        var c: Int = 0
         var nbAlive: Int = 0
-        var status : String = "ALIVE"
+        var status: String = "ALIVE"
         
         for character in player.team {
             if character.lifePoints > 0 {
@@ -52,7 +55,7 @@ class Player {
             } else {
                 status = "DEAD"
             }
-            print("\(c+1) Nom : \(character.name) Arme : \(character.weapon.name) Pts de vie : \(character.lifePoints) - \(status)")
+            print("\(c+1) Nom : \(character.name) Arme : \(character.weapon.name) Points de vie : \(character.lifePoints) - \(status)")
             c += 1
         }
     }
