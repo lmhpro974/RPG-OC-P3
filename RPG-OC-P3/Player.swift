@@ -8,13 +8,13 @@
 import Foundation
 /*Class "Player" which defines the name of the character and the number of points.
  Class "Joueur " qui défini le nom du personnage son nombre de points */
- class Player {
+class Player {
     let name: String
     var team = [Character]()
     var teamLifePoints = 300
-/*the board is a static variable, it is common to 2 teams (players)
- le tableau est une variable statique, il est commun à 2 équipes (joueurs)
- */
+    /*the board is a static variable, it is common to 2 teams (players)
+     le tableau est une variable statique, il est commun à 2 équipes (joueurs)
+     */
     static var allCharNames = [String]()
     
     init(name: String) {
@@ -25,11 +25,11 @@ import Foundation
         print()
         while team.count < 3 {
             print("Quel est le nom de votre personnage \(team.count + 1) de \(name) ?")
-            if let characterName = readLine(), characterName != "", characterName != " ", checkIfNameIsAbsent(name: characterName) {
+            if let characterName = readLine()?.trimmingCharacters(in: .whitespacesAndNewlines), characterName != "", checkIfNameIsAbsent(name: characterName) {
                 let character = Character(name: characterName)
                 team.append(character)
             } else {
-                print("Le nom du personnage existe déjà dans une des 2 équipes")
+                print("Le nom du personnage existe déjà dans une des 2 équipes ou est incorrect")
             }
         }
     }
@@ -39,8 +39,8 @@ import Foundation
             return false
         } else {
             Player.allCharNames.append(name)
+            return true
         }
-        return true
     }
     
     func listCharactersOfPlayer(player: Player) {
